@@ -7,6 +7,7 @@ import img3 from './shoes (3).jpg'
 import './home.css'
 
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 export default function Home() {
     let [data, setData] = useState([])
 
@@ -65,11 +66,11 @@ export default function Home() {
                         {
                             data.slice(0, 8).map((item, index) => {
                                 return <div key={index} className="col-lg-3 col-md-6" data-wow-delay="0.1s">
-                                    <div className="team-item">
+                                    <Link to={`/product/${item._id}`} className="team-item">
                                         <div className="position-relative overflow-hidden">
                                             <img className="img-fluid" src={item.pic1} style={{ height: "230px", width: "100%" }} alt="" />
                                             <div className="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                                <img src={item.pic2} className='position-absolute start-0 top-0 w-100 h-100' style={{ height: "230px", width: "100%" }} alt="" />
+                                                {/* <img src={item.pic2} className='position-absolute start-0 top-0 w-100 h-100' style={{ height: "230px", width: "100%" }} alt="" /> */}
                                                 {/* <Link className="btn btn-square w-100 position-absolute start-0 bottom-0 w-100 h-100'" to={`/product/${item._id}`}><i className="fa fa-shopping-cart"></i> Add to Cart</Link> */}
                                             </div>
                                         </div>
@@ -77,7 +78,7 @@ export default function Home() {
                                             <h5 className="fw-bold mb-0" style={{ height: "50px" }}>{item.name}</h5>
                                             {/* <small><del className='text-danger'>&#8377;{item.baseprice}</del> &#8377;{item.finalprice} <sup className='text-success'>{item.discount}% Off</sup></small> */}
                                         </div>
-                                    </div>
+                                    </Link>
                                 </div>
                             })
                         }
@@ -86,34 +87,36 @@ export default function Home() {
             </div>
             <div className="container-xxl py-5 mt-4">
                 <div className="container">
-                    <div className="text-center" data-wow-delay="0.1s">
-                        {/* <h6 className="text-primary text-uppercase">// Best in Fashion //</h6> */}
-                        <h1 className="mb-5">Mens Shoes</h1>
-                    </div>
+                    {data.filter(item => item.maincategory === "Male").length > 0 && (
+                        <div className="text-center" data-wow-delay="0.1s">
+                            {/* <h6 className="text-primary text-uppercase">// Best in Fashion //</h6> */}
+                            <h1 className="mb-5">Mens Shoes</h1>
+                        </div>
+                    )}
+
+
                     <div className="row g-4">
                         {
                             data.reverse().map((item, index) => {
-                                // Check if maincategory is "Kids"
                                 if (item.maincategory === "Male") {
                                     return (
                                         <div key={index} className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                            <div className="team-item">
+                                            <Link to={`/product/${item._id}`} className="team-item">
                                                 <div className="position-relative overflow-hidden">
                                                     <img className="img-fluid" src={item.pic1} style={{ height: "230px", width: "100%" }} alt="" />
                                                     <div className="team-overlay position-absolute start-0 top-0 w-100 h-100">
-                                                        <img src={item.pic2} className='position-absolute start-0 top-0 w-100 h-100' style={{ height: "230px", width: "100%" }} alt="" />
-                                                        {/* <Link className="btn btn-square w-100 position-absolute start-0 bottom-0 w-100 h-100'" to={`/product/${item._id}`}><i className="fa fa-shopping-cart"></i> Add to Cart</Link> */}
+                                                        {/* <img src={item.pic2} className='position-absolute start-0 top-0 w-100 h-100' style={{ height: "230px", width: "100%" }} alt="no-img" /> */}
                                                     </div>
                                                 </div>
                                                 <div className="bg-light text-center p-1">
                                                     <h5 className="fw-bold mb-0" style={{ height: "50px" }}>{item.name}</h5>
                                                     {/* <small><del className='text-danger'>&#8377;{item.baseprice}</del> &#8377;{item.finalprice} <sup className='text-success'>{item.discount}% Off</sup></small> */}
                                                 </div>
-                                            </div>
+                                            </Link>
                                         </div>
                                     );
                                 } else {
-                                    return null; // Render nothing if maincategory is not "Male"
+                                    return null;
                                 }
                             })
                         }
@@ -143,10 +146,14 @@ export default function Home() {
             {/* <!-- Product Section End --> */}
             <div className="container-xxl py-5 mt-4">
                 <div className="container">
-                    <div className="text-center" data-wow-delay="0.1s">
-                        {/* <h6 className="text-primary text-uppercase">// Best in Fashion //</h6> */}
-                        <h1 className="mb-5">Kids Shoes</h1>
-                    </div>
+                    {data.filter(item => item.maincategory === "Kids").length > 0 && (
+                        <div className="text-center" data-wow-delay="0.1s">
+                            {/* <h6 className="text-primary text-uppercase">// Best in Fashion //</h6> */}
+                            <h1 className="mb-5">Kids Shoes</h1>
+                        </div>
+                    )}
+
+
                     <div className="row g-4">
                         {
                             data.reverse().slice(1, 9).map((item, index) => {
@@ -181,10 +188,12 @@ export default function Home() {
 
             <div className="container-xxl py-5 mt-4">
                 <div className="container">
-                    <div className="text-center" data-wow-delay="0.1s">
-                        {/* <h6 className="text-primary text-uppercase">// Best in Fashion //</h6> */}
-                        <h1 className="mb-5">Women Shoes</h1>
-                    </div>
+                  
+                    {data.filter(item => item.maincategory === "Kids").length > 0 && (
+                        <div className="text-center" data-wow-delay="0.1s">
+                            <h1 className="mb-5">Women Shoes</h1>
+                            </div>
+                    )}
                     <div className="row g-4">
                         {
                             data.reverse().map((item, index) => {

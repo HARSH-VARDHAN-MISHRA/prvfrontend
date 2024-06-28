@@ -151,4 +151,3 @@ const Pagination = ({ productsPerPage, totalProducts, paginate }) => {
 }
 
 export default AdminProduct;
-``
