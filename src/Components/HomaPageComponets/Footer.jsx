@@ -26,9 +26,9 @@ export default function Footer() {
                     <div className="row g-5">
                         <div className="col-lg-4 col-md-6">
                             <h4 className="text-light mb-4">Address</h4>
-                            <p className="mb-2"><i className="fa fa-map-marker-alt me-3"></i>A-268, Vijay Vihar Ph-1 , Rohini Delhi ,India</p>
-                            <p className="mb-2"><i className="fa fa-phone-alt me-3"></i><Link className='text-light' to="tel:9354757842">9354757842</Link></p>
-                            <p className="mb-2"><i className="fa fa-envelope me-3"></i><Link className='text-light' to="mailto:mannu22072000@gmail.com">mannu22072000@gmail.com</Link></p>
+                            <p className="mb-2"><i className="fa fa-map-marker-alt me-3"></i>B - 314, Mangolpuri, industrial area, phase 1, New Delhi - 110083</p>
+                            <p className="mb-2"><i className="fa fa-phone-alt me-3"></i><Link className='text-light' to="tel:9321227881">9321227881</Link></p>
+                            <p className="mb-2"><i className="fa fa-envelope me-3"></i><Link className='text-light' to="mailto:parav0087@gmail.com">parav0087@gmail.com</Link></p>
                             <div className="d-flex pt-2">
                                 <Link className="btn btn-outline-light btn-social" to=""><i className="fab fa-twitter"></i></Link>
                                 <Link className="btn btn-outline-light btn-social" to=""><i className="fab fa-facebook-f"></i></Link>

@@ -52,7 +52,7 @@ const Contact = () => {
                   <div className="col-md-4">
                      <div className="bg-light d-flex flex-column justify-content-center p-4">
                         <h5 className="text-uppercase">// Address //</h5>
-                        <p className="m-0"><i className="fa fa-home text-primary me-2"></i>B-314 MANGOLPURI PH-1,NEW DELHI 110083</p>
+                        <p className="m-0"><i className="fa fa-home text-primary me-2"></i>B - 314, Mangolpuri, industrial area, phase 1, New Delhi - 110083</p>
                      </div>
                   </div>
                   <div className="col-md-4">
